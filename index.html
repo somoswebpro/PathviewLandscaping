@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Pathview Landscaping - Expert hardscape & landscaping in Kansas City. Custom patios, retaining walls, outdoor kitchens, and seasonal maintenance.">
+    <meta name="keywords" content="landscaping, hardscape, patios, retaining walls, outdoor kitchen, Kansas City, Overland Park">
+    <meta name="author" content="Pathview Landscaping">
+    <meta property="og:title" content="Pathview Landscaping | Outdoor Living Redefined">
+    <meta property="og:description" content="Design, installation and maintenance of exquisite outdoor spaces in Kansas City and beyond.">
+    <meta property="og:image" content="Fondo.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/x-icon" href="LOGO.ico">
+    <title>Pathview Landscaping | Hardscape & Landscape Experts</title>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts con display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: { 850: '#1c1917', 900: '#1c1917', 950: '#0c0a09' },
+                        warm: { 50: '#fff8f2', 100: '#fef3e8', 200: '#fae6d4', 300: '#f5d4b8', 400: '#e7b58f', 500: '#d49466', 600: '#b87344', 700: '#9e5e36', 800: '#7e4a2c', 900: '#5e3620' },
+                        moss: { 50: '#f2f8ec', 100: '#e2efd6', 200: '#c5e0ae', 300: '#a2cc7e', 400: '#7fb551', 500: '#5f9437', 600: '#487528', 700: '#36591e', 800: '#264316', 900: '#1a2e0f' }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: linear-gradient(135deg, #fefaf5 0%, #fff7f0 100%); 
+            font-family: 'Inter', sans-serif; 
+            color: #2c241e; 
+            overflow-x: hidden;
+        }
+        
+        .glass-card-dark { background: rgba(28, 25, 23, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(215, 180, 140, 0.2); border-radius: 2rem; }
+        .glass-card { background: rgba(255, 250, 240, 0.88); backdrop-filter: blur(12px); border: 1px solid rgba(167, 127, 86, 0.25); border-radius: 2rem; box-shadow: 0 12px 32px rgba(0,0,0,0.05); }
+        
+        .btn-primary { background: linear-gradient(135deg, #b87344 0%, #9e5e36 100%); color: white; transition: all 0.3s; box-shadow: 0 4px 15px rgba(184, 115, 68, 0.3); border-radius: 3rem; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(184, 115, 68, 0.4); background: linear-gradient(135deg, #c48050 0%, #b0683a 100%); }
+        
+        .btn-outline { background: transparent; border: 2px solid #5f9437; color: #3b5a22; transition: all 0.2s; border-radius: 3rem; }
+        .btn-outline:hover { background: #5f9437; color: white; transform: translateY(-2px); }
+        
+        .parallax-bg { background-attachment: fixed; background-size: cover; background-position: center; }
+        @media (max-width: 768px) { .parallax-bg { background-attachment: scroll; } }
+        
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #ede4db; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #9bb88b; border-radius: 10px; }
+        
+        .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s; }
+        .hover-scale:hover { transform: scale(1.02); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15); }
+        
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+        .animate-bounce { animation: bounce 1.5s infinite; }
+        
+        /* Testimonios scroll */
+        .testimonios-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            gap: 1.5rem;
+            padding: 0.5rem 0.25rem 1.5rem 0.25rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            cursor: grab;
+        }
+        .testimonios-scroll:active { cursor: grabbing; }
+        .testimonios-scroll::-webkit-scrollbar { height: 6px; }
+        .testimonios-scroll::-webkit-scrollbar-track { background: #e8dfd6; border-radius: 10px; }
+        .testimonios-scroll::-webkit-scrollbar-thumb { background: #9bb88b; border-radius: 10px; }
+        
+        .testimonial-card {
+            flex: 0 0 calc(33.333% - 1rem);
+            scroll-snap-align: start;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+        @media (max-width: 1024px) { .testimonial-card { flex: 0 0 calc(50% - 0.75rem); } }
+        @media (max-width: 768px) { .testimonial-card { flex: 0 0 calc(100% - 0rem); } }
+        .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15); }
+        
+        .btn-nav { transition: all 0.2s; }
+        .btn-nav:hover { background-color: #5f9437; color: white; border-color: #5f9437; }
+        
+        #inicio {
+            padding-top: 90px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        #inicio .relative { width: 100%; }
+        
+        .service-area-img, .contact-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .contact-img:hover, .service-area-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -8px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+
+<body class="font-body">
+
+<!-- ========== NAVBAR FLOTANTE ========== -->
+<nav class="fixed top-0 w-full z-50 py-4 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card py-2.5 px-4 sm:px-6 flex justify-between items-center shadow-md transition-all duration-300">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 sm:gap-3 group cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-warm-600 flex items-center justify-center group-hover:scale-110 transition overflow-hidden">
+                    <img src="LOGO.ico" alt="Logo PATHVIEW" class="w-full h-full object-cover">
+                </div>
+                <div class="leading-tight">
+                    <span class="font-display text-lg sm:text-2xl font-bold text-stone-800 tracking-tight block">PATHVIEW</span>
+                    <span class="font-display text-xs sm:text-sm font-semibold text-warm-600 block -mt-0.5">LANDSCAPING</span>
+                </div>
+            </div>
+            
+            <!-- Menú escritorio -->
+            <div class="hidden md:flex gap-6 lg:gap-8 items-center text-stone-700 font-medium">
+                <a href="index.html?section=home" class="hover:text-warm-700 transition relative group section-link">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                <a href="index.html?section=about" class="hover:text-warm-700 transition relative group section-link">About Us<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                <a href="index.html?section=services" class="hover:text-warm-700 transition relative group">Our Services<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                <a href="index.html?section=testimonials" class="hover:text-warm-700 transition relative group">Testimonials<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                <a href="index.html?section=contact" class="btn-primary px-5 py-2 text-sm font-semibold shadow-md section-link">Contact Us</a>
+            </div>
+            
+            <!-- Botón hamburguesa -->
+            <button id="mobileMenuBtn" class="md:hidden text-stone-700 text-2xl focus:outline-none" aria-label="Menú móvil">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Menú móvil -->
+        <div id="mobileMenu" class="hidden md:hidden mt-2 glass-card p-4 flex flex-col gap-2 backdrop-blur-md rounded-2xl max-h-[80vh] overflow-y-auto shadow-xl">
+            <a href="index.html?section=home" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-200 font-medium section-link">Home</a>
+            <a href="index.html?section=about" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-200 font-medium section-link">About Us</a>
+            <a href="our-services.html" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-200 font-medium">Our Services</a>
+            <a href="index.html?section=testimonials" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-200 font-medium">Testimonials</a>
+            <a href="index.html?section=contact" class="btn-primary text-center py-3 rounded-full font-semibold mt-2 section-link">Contact Us</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // ========== CONFIGURACIÓN DE SECCIONES (optimizada) ==========
+    const sectionConfig = {
+        home: { selector: '#inicio', scrollToTop: true },
+        about: { selector: '#about', fallbackText: ['About Us', 'Quiénes Somos'] },
+        services: { selector: '#services' },
+        testimonials: { selector: '#testimonials-section', fallbackText: ['Testimonials', 'Testimonios'] },
+        contact: { selector: '#contact', fallbackText: ['Contact Us', 'Contacto'] }
+    };
+
+    function scrollToElement(element) {
+        if (!element) return false;
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+        return true;
+    }
+
+    function findSection(sectionKey) {
+        const cfg = sectionConfig[sectionKey];
+        if (!cfg) return null;
+        if (cfg.selector) {
+            const el = document.querySelector(cfg.selector);
+            if (el) return el;
+        }
+        if (sectionKey === 'home' && cfg.scrollToTop) {
+            return { customScroll: () => window.scrollTo({ top: 0, behavior: 'smooth' }) };
+        }
+        if (cfg.fallbackText) {
+            for (let heading of document.querySelectorAll('h1, h2, h3, .section-title')) {
+                const text = heading.innerText.trim().toLowerCase();
+                if (cfg.fallbackText.some(t => text.includes(t.toLowerCase()))) {
+                    return heading.closest('section, div.container, div.section') || heading;
+                }
+            }
+        }
+        return null;
+    }
+
+    function handleSectionFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        const section = params.get('section');
+        if (!section) return;
+        // Limpiar URL sin recargar
+        if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        setTimeout(() => {
+            const target = findSection(section);
+            if (target) {
+                if (target.customScroll) target.customScroll();
+                else scrollToElement(target);
+            }
+        }, 100);
+    }
+
+    // Clic en enlaces internos
+    document.querySelectorAll('.section-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href) return;
+            const url = new URL(href, window.location.href);
+            if (url.pathname === window.location.pathname && url.searchParams.has('section')) {
+                e.preventDefault();
+                const section = url.searchParams.get('section');
+                const target = findSection(section);
+                if (target) {
+                    if (target.customScroll) target.customScroll();
+                    else scrollToElement(target);
+                }
+                window.history.pushState({}, '', `?section=${section}`);
+            }
+        });
+    });
+
+    // Menú móvil mejorado
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileBtn.querySelector('i');
+            icon?.classList.toggle('fa-times', !mobileMenu.classList.contains('hidden'));
+            icon?.classList.toggle('fa-bars', mobileMenu.classList.contains('hidden'));
+            // Prevenir scroll del body cuando menú abierto (mejora UX)
+            document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+                const icon = mobileBtn.querySelector('i');
+                if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+            });
+        });
+    }
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            const glassCard = navbar.querySelector('.glass-card');
+            if (window.scrollY > 20) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+                glassCard?.classList.add('shadow-lg', 'bg-white/90');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+                glassCard?.classList.remove('shadow-lg', 'bg-white/90');
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', handleSectionFromURL);
+    else handleSectionFromURL();
+</script>
+
+<!-- Hero Section -->
+<main>
+    <section id="inicio" class="relative flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 parallax-bg" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('Fondo.jpg'); background-position: center 30%;" aria-hidden="true"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto text-center px-6">
+            <span class="inline-block text-warm-200 tracking-[0.3em] text-sm md:text-base mb-5 fade-up">Experts in Hardscape & Landscaping</span>
+            
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] drop-shadow-2xl fade-up">
+                Designing Exquisite <br><span class="text-warm-300">Outdoor Spaces In</span> <br class="hidden md:block">Kansas City And Beyond
+            </h1>
+            
+            <p class="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mt-6 fade-up">
+                We design, install, and maintain outdoor living that enhance property value, improve functionality, and perform reliably through every season.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-5 mt-10 fade-up">
+                <a href="index.html?section=services" class="btn-primary px-9 py-4 text-lg font-semibold shadow-2xl inline-flex items-center gap-2">
+                    <i class="fas fa-search" aria-hidden="true"></i> Discover Our Services
+                </a>
+                <a href="index.html?section=contact" class="bg-white/10 backdrop-blur-sm border-2 border-white/60 text-white hover:bg-white/20 px-9 py-4 text-lg font-medium rounded-full transition inline-flex items-center gap-2">
+                    <i class="fas fa-headset" aria-hidden="true"></i> Start Your Project
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 max-w-4xl mx-auto">
+                <div class="glass-card-dark py-5 px-3 rounded-2xl">
+                    <div class="text-4xl font-display font-bold text-warm-300 counter" data-target="250" data-suffix="+">0</div>
+                    <div class="text-white/80 text-sm mt-1">Gardens Completed</div>
+                </div>
+                <div class="glass-card-dark py-5 px-3 rounded-2xl">
+                    <div class="text-4xl font-display font-bold text-warm-300 counter" data-target="98" data-suffix="%">0</div>
+                    <div class="text-white/80 text-sm mt-1">Client Satisfaction</div>
+                </div>
+                <div class="glass-card-dark py-5 px-3 rounded-2xl">
+                    <div class="text-4xl font-display font-bold text-warm-300 counter" data-target="10" data-suffix="+">0</div>
+                    <div class="text-white/80 text-sm mt-1">Years In The Industry</div>
+                </div>
+                <div class="glass-card-dark py-5 px-3 rounded-2xl">
+                    <div class="text-4xl font-display font-bold text-warm-300 counter" data-target="10" data-suffix="+">0</div>
+                    <div class="text-white/80 text-sm mt-1">Service Areas</div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </section>
+</main>
+
+<!-- About Section - Responsive -->
+<section id="about" class="py-20 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1 space-y-6">
+                <div class="fade-up">
+                    <span class="text-moss-400 font-semibold tracking-wider inline-flex items-center gap-2"><i class="fas fa-seedling"></i> About Us</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-800 mt-3 leading-tight">At Pathview Landscaping, every outdoor space has the potential to flourish.</h2>
+                    <div class="w-20 h-1 bg-warm-400 mt-5 rounded-full"></div>
+                </div>
+                <div class="fade-up space-y-5">
+                    <p class="text-stone-700 text-lg leading-relaxed text-1xl md:text-1xl">With years of expertise in Hardscape and landscaping, our team combines creativity, craftsmanship, and sustainability to design spaces that truly inspire.</p>
+                    <p class="text-stone-700 text-lg leading-relaxed text-1xl md:text-1xl">Professional design. Expert execution. We provide high-impact landscaping and hardscaping services for clients who prioritize craftsmanship and reliability. Let us handle the complexities of your project with the expertise your home deserves.</p>
+                </div>
+                <div class="fade-up flex flex-wrap gap-4 pt-4">
+                    <div class="flex items-center gap-3 bg-moss-50 px-4 py-2 rounded-full shadow-sm"><i class="fas fa-trophy text-moss-600 text-xl"></i><span class="font-medium text-stone-600">Precision build Hardscapes</span></div>
+                    <div class="flex items-center gap-3 bg-moss-50 px-4 py-2 rounded-full shadow-sm"><i class="fas fa-leaf text-moss-600 text-xl"></i><span class="font-medium text-stone-600">High-durability</span></div>
+                    <div class="flex items-center gap-3 bg-moss-50 px-4 py-2 rounded-full shadow-sm"><i class="fas fa-pen-ruler text-moss-600 text-xl"></i><span class="font-medium text-stone-600">100% custom design</span></div>
+                </div>
+            </div>
+            <div class="fade-up order-1 lg:order-2 flex justify-center">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 group max-w-full">
+                    <img src="About.jpeg" alt="Pathview team at work" class="w-full h-auto object-cover rounded-3xl transition duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/800x600/e2efd6/36591e?text=Pathview+Team';">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section - Título centrado arriba, imagen izquierda y servicios derecha (clickeables) -->
+<section id="services" class="py-20 px-6 bg-gradient-to-br from-moss-50/30 to-white overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <!-- Título centrado en la parte superior -->
+        <div class="text-center fade-up mb-10">
+            <span class="text-moss-500 font-semibold uppercase tracking-wider text-sm"><i class="fas fa-cogs mr-1"></i> Our Services</span>
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-stone-800 mt-2 leading-tight">Complete Outdoor Solutions</h2>
+            <div class="w-20 h-1 bg-warm-500 mt-3 rounded-full mx-auto"></div>
+        </div>
+
+        <!-- Grid de dos columnas: imagen izquierda, servicios derecha -->
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <!-- Columna izquierda: Imagen -->
+             <div class="fade-up flex justify-center">
+                <div class="rounded-3xl overflow-hidden shadow-2xl transition group mx-auto" style="width: 400px; height: auto;"> <!-- Cambia el width y height según necesites -->
+                    <img src="our-services.jpeg" 
+                        alt="Pathview Landscaping services - outdoor design and installation" 
+                        class="w-full h-auto object-cover rounded-3xl transition duration-700 group-hover:scale-105" 
+                        style="width: 1200px; height: 475px; max-height: 1200px;" 
+                        loading="lazy" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/800x1000/e2efd6/36591e?text=Our+Services';">
+                </div>
+            </div>
+
+            <!-- Columna derecha: Grid de tarjetas clickeables con imágenes e iconos completos -->
+            <div class="fade-up">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                    
+                    <!-- Tarjeta 1: Paver & Concrete Patios -->
+                    <a href="service1.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-square text-2xl text-moss-400 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Paver & Concrete Patios</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">High-end paver patios, concrete design & custom finishes.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 2: Retaining Walls -->
+                    <a href="service2.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-border-all text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Retaining Walls</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">Structural walls that stop erosion, add depth & character.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 3: Outdoor Kitchens -->
+                    <a href="service3.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-utensils text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Outdoor Kitchens</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">Custom kitchen installation & design for backyard entertaining.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 4: Pergolas -->
+                    <a href="service4.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-tree text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Pergolas</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">Custom pergolas from premium wood, aluminum or fiberglass.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 5: Fire Pits -->
+                    <a href="service5.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-fire text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Fire Pits</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">Custom fire features blending masonry with modern elegance.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 6: Landscape Installation -->
+                    <a href="service6.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-leaf text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Landscape Installation</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">New beds, shrubs, plants, rock, mulch & accent features.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 7: Grading & Drainage -->
+                    <a href="service7.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-water text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Grading & Drainage</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">Yard grading, leveling, drainage correction & runoff control.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 8: Sprinkler Systems -->
+                    <a href="service8.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-sprinkler text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Sprinkler Systems</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">Testing, repairs, start ups & winterization of systems.</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 9: Lawn Maintenance -->
+                    <a href="service9.html" class="service-card block group">
+                        <div class="bg-white rounded-xl shadow-md p-3 hover-scale transition-all border border-moss-100 hover:border-warm-300 flex flex-col items-start h-full">
+                            <i class="fas fa-mowing text-2xl text-moss-500 mb-2"></i>
+                            <h3 class="text-base font-bold text-stone-800">Lawn Maintenance</h3>
+                            <p class="text-stone-600 text-xs mt-1 leading-relaxed">Weekly mowing, clean up, and professional lawn care.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Areas Service -->
+<section id="areas" class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+    <!-- MAP SIDE -->
+    <div class="fade-up order-2 lg:order-1">
+
+      <!-- Leaflet CSS -->
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
+
+      <style>
+        .map-wrapper {
+          position: relative;
+          overflow: hidden;
+          border-radius: 28px;
+          height: 520px;
+          border: 1px solid #dbe7cf;
+          background: #f8faf5;
+          box-shadow:
+            0 20px 50px rgba(54, 89, 30, 0.10),
+            inset 0 1px 0 rgba(255,255,255,0.9);
+        }
+
+        #serviceMap {
+          height: 100%;
+          width: 100%;
+          filter: saturate(0.9) contrast(1.02);
+        }
+
+        /* Floating Card */
+        .map-info-card {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          z-index: 999;
+          background: rgba(255,255,255,0.85);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(226,239,214,0.9);
+          border-radius: 22px;
+          padding: 18px 22px;
+          width: 250px;
+          box-shadow: 0 12px 30px rgba(54,89,30,0.08);
+        }
+
+        .map-info-card h3 {
+          margin: 0 0 8px;
+          color: #36591e;
+          font-size: 1.1rem;
+          font-weight: 700;
+        }
+
+        .map-info-card p {
+          margin: 0;
+          color: #6b7280;
+          font-size: 0.92rem;
+          line-height: 1.5;
+        }
+
+        /* Popup */
+        .leaflet-popup-content-wrapper {
+          border-radius: 16px;
+          background: #36591e;
+          color: white;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .leaflet-popup-content {
+          font-size: 0.95rem;
+        }
+
+        .leaflet-popup-tip {
+          background: #36591e;
+        }
+
+        /* Custom Marker */
+        .custom-marker {
+          width: 18px;
+          height: 18px;
+          background: #d97706;
+          border: 3px solid white;
+          border-radius: 999px;
+          box-shadow: 0 0 0 rgba(217,119,6,0.4);
+          animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(217,119,6,0.4);
+          }
+          70% {
+            box-shadow: 0 0 0 14px rgba(217,119,6,0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(217,119,6,0);
+          }
+        }
+
+        /* Remove default ugly borders */
+        .leaflet-container {
+          background: #f8faf5;
+        }
+
+        @media (max-width: 768px) {
+          .map-wrapper {
+            height: 430px;
+          }
+
+          .map-info-card {
+            width: calc(100% - 40px);
+          }
+        }
+      </style>
+
+      <!-- MAP -->
+      <div class="map-wrapper">
+        <div id="serviceMap"></div>
+      </div>
+    </div>
+
+    <!-- TEXT SIDE -->
+    <div class="order-1 lg:order-2">
+
+      <div class="fade-up">
+        <span class="text-moss-600 font-semibold uppercase tracking-wider">
+          <i class="fas fa-map-marker-alt mr-1"></i>
+          Where We Work
+        </span>
+
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-800 mt-2">
+          Areas We Serve
+        </h2>
+
+        <div class="w-16 h-1 bg-warm-500 mt-4 rounded-full"></div>
+
+        <p class="text-stone-600 text-lg mt-4">
+          Kansas City Metropolitan & Johnson County — Your project, in expert hands
+        </p>
+      </div>
+
+      <!-- AREAS -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-10 fade-up">
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Kansas City KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Kansas City MO</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Olathe KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Overland Park KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Prairie Village KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Mission Hills KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Leawood KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Shawnee Mission KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Lenexa KS</span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-3 text-center hover:shadow-lg transition hover:-translate-y-1 border border-moss-100">
+          <span class="font-medium text-stone-700">Johnson County KS</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAFLET -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  // Initialize map
+  const map = L.map('serviceMap', {
+    zoomControl: false,
+    scrollWheelZoom: false
+  }).setView([39.0119, -94.7000], 10);
+
+  // Light elegant map
+  L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      attribution: '&copy; OpenStreetMap contributors'
+    }
+  ).addTo(map);
+
+  // Custom marker
+  const customIcon = L.divIcon({
+    className: '',
+    html: '<div class="custom-marker"></div>',
+    iconSize: [18, 18],
+    iconAnchor: [9, 9]
+  });
+
+  // ALL SERVICE AREAS
+  const locations = [
+    {
+      name: "Kansas City KS",
+      coords: [39.1142, -94.6275]
+    },
+    {
+      name: "Kansas City MO",
+      coords: [39.0997, -94.5786]
+    },
+    {
+      name: "Olathe KS",
+      coords: [38.8814, -94.8191]
+    },
+    {
+      name: "Overland Park KS",
+      coords: [38.9822, -94.6708]
+    },
+    {
+      name: "Prairie Village KS",
+      coords: [38.9917, -94.6336]
+    },
+    {
+      name: "Mission Hills KS",
+      coords: [39.0175, -94.6325]
+    },
+    {
+      name: "Leawood KS",
+      coords: [38.9667, -94.6169]
+    },
+    {
+      name: "Shawnee Mission KS",
+      coords: [39.0150, -94.7152]
+    },
+    {
+      name: "Lenexa KS",
+      coords: [38.9536, -94.7336]
+    },
+    {
+      name: "Johnson County KS",
+      coords: [38.8461, -94.8520]
+    }
+  ];
+
+  // Add markers
+  locations.forEach(location => {
+    L.marker(location.coords, {
+      icon: customIcon
+    })
+    .addTo(map)
+    .bindPopup(`
+      <div style="padding:5px 8px;">
+        <strong>${location.name}</strong><br>
+        Service Available
+      </div>
+    `);
+  });
+</script>
+
+<!-- Testimonios con auto-scroll mejorado -->
+<div id="testimonials-section" class="max-w-7xl mx-auto py-16 px-6">
+    <div class="text-center mb-10 fade-up">
+        <span class="text-moss-600 font-semibold uppercase tracking-wider text-sm"><i class="fas fa-comment-dots mr-1"></i> What Our Clients Say</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-stone-800 mt-2">More Testimonials</h2>
+    </div>
+    <div class="flex justify-between items-center mb-4 fade-up">
+        <div class="flex gap-2">
+            <button id="scrollLeftBtn" class="w-10 h-10 rounded-full border border-moss-300 bg-white text-moss-600 btn-nav shadow-sm flex items-center justify-center" aria-label="Testimonios anteriores"><i class="fas fa-chevron-left"></i></button>
+            <button id="scrollRightBtn" class="w-10 h-10 rounded-full border border-moss-300 bg-white text-moss-600 btn-nav shadow-sm flex items-center justify-center" aria-label="Testimonios siguientes"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+    <div id="testimoniosContainer" class="testimonios-scroll">
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Michael Carter</h3><p class="text-sm text-stone-500">Villa Owner</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"I wanted a landscape that matched the elegance of my villa, and Pathview Landscaping delivered beyond imagination."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Christopher Tanaka</h3><p class="text-sm text-stone-500">Architect</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"The design team understood my vision for a minimalist zen garden and delivered beyond expectations."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Michelle Wong</h3><p class="text-sm text-stone-500">Landscape Enthusiast</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"I was impressed by how eco-friendly the solutions were. Less water, less maintenance, but more beauty."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Laura Mitchell</h3><p class="text-sm text-stone-500">Homeowner</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"Our small backyard feels like a private resort now. The team perfectly balanced modern style with natural greenery."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Sophia Ramirez</h3><p class="text-sm text-stone-500">Hotel Manager</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"Our hotel guests often compliment the outdoor spaces. It’s become one of our biggest highlights."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Priya Desai</h3><p class="text-sm text-stone-500">Property Owner</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"They turned our rooftop into a green oasis. It adds value to our property and lifestyle."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Daniel Washington</h3><p class="text-sm text-stone-500">Office Manager</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"They transformed our office courtyard into a relaxing space. Employees love spending breaks outside now."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 testimonial-card border border-moss-100"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 rounded-full bg-moss-100 flex items-center justify-center text-moss-600"><i class="fas fa-user-circle text-3xl"></i></div><div><h3 class="font-bold text-stone-800 text-lg">Jamey Carter</h3><p class="text-sm text-stone-500">Community Leader</p></div></div><i class="fas fa-quote-left text-2xl text-moss-300 mb-2 block"></i><p class="text-stone-600 leading-relaxed">"The park renovation project exceeded expectations. Families now enjoy a cleaner, greener community space."</p><div class="flex gap-1 text-yellow-500 mt-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+    </div>
+</div>
+
+<!-- Sección de Contacto -->
+<section id="contact" class="py-16 sm:py-24 px-5 sm:px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 fade-up">
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-800">Let’s Bring Your Green Vision to Life</h2>
+            <div class="w-20 h-1 bg-moss-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+            <div class="bg-gradient-to-br from-white to-moss-50 rounded-3xl shadow-xl p-6 sm:p-8 fade-up border border-moss-100">
+
+                <form id="contactForm" action="send.php" method="POST">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div><label class="block text-stone-700 font-medium mb-1 text-sm">Full Name <span class="text-red-500">*</span></label><input type="text" name="fullname" required placeholder="First & Last Name" class="w-full px-4 py-3 rounded-xl border border-moss-200 focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition outline-none"></div>
+                        <div><label class="block text-stone-700 font-medium mb-1 text-sm">Email <span class="text-red-500">*</span></label><input type="email" name="email" required placeholder="johndoe@companyemail.com" class="w-full px-4 py-3 rounded-xl border border-moss-200 focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition outline-none"></div>
+                        <div><label class="block text-stone-700 font-medium mb-1 text-sm">Phone <span class="text-red-500">*</span></label><input type="tel" name="phone" required placeholder="e.g 913 123 4567" class="w-full px-4 py-3 rounded-xl border border-moss-200 focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition outline-none"></div>
+                        <div><label class="block text-stone-700 font-medium mb-1 text-sm">Location <span class="text-red-500">*</span></label><input type="text" name="location" required placeholder="e.g Kansas City, KS" class="w-full px-4 py-3 rounded-xl border border-moss-200 focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition outline-none"></div>
+                    </div>
+                    
+                    <!-- Nuevo campo: selección de tipo de servicio -->
+                    <div class="mt-5">
+                        <label class="block text-stone-700 font-medium mb-1 text-sm">Service Interested In <span class="text-red-500">*</span></label>
+                        <select name="service" required class="w-full px-4 py-3 rounded-xl border border-moss-200 focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition outline-none bg-white">
+                            <option value="" disabled selected>-- Select a service --</option>
+                            <option value="Paver & Concrete Patios">Paver & Concrete Patios</option>
+                            <option value="Retaining Walls">Retaining Walls</option>
+                            <option value="Outdoor Kitchens">Outdoor Kitchens</option>
+                            <option value="Pergolas">Pergolas</option>
+                            <option value="Fire Pits">Fire Pits</option>
+                            <option value="Landscape Installation">Landscape Installation</option>
+                            <option value="Grading & Drainage">Grading & Drainage</option>
+                            <option value="Sprinkler Systems">Sprinkler Systems</option>
+                            <option value="Lawn Maintenance">Lawn Maintenance</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-5"><label class="block text-stone-700 font-medium mb-1 text-sm">Message</label><textarea name="message" rows="4" placeholder="Write your message or Questions here" class="w-full px-4 py-3 rounded-xl border border-moss-200 focus:border-warm-500 focus:ring-2 focus:ring-warm-200 transition outline-none"></textarea></div>
+                    <div class="mt-5 flex items-start gap-3">
+                        <input type="checkbox" id="termsCheckbox" required class="mt-1 w-4 h-4 text-moss-600 rounded border-moss-300 focus:ring-moss-500">
+                        <label for="termsCheckbox" class="text-sm text-stone-600">I have read and accepted <a href="#" class="text-moss-600 hover:underline" id="termsLink">terms and privacy</a> <span class="text-red-500">*</span></label>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <button type="submit" class="btn-primary w-full sm:w-auto px-8 py-3 text-lg font-semibold shadow-md transition">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
+                    </div>
+                    <p class="text-center text-xs text-stone-500 mt-4">We’ll get back to you within 24 hours.</p>
+                </form>
+                <div id="formFeedback" class="hidden mt-4 text-center font-medium rounded-lg p-2"></div>
+                <script>
+                const params = new URLSearchParams(window.location.search);
+                if(params.get("success") === "1") {
+                    const feedback = document.getElementById("formFeedback");
+                    feedback.classList.remove("hidden");
+                    feedback.classList.add(
+                        "bg-green-100",
+                        "text-green-700"
+                    );
+                    feedback.innerHTML =
+                    '<i class="fas fa-check-circle"></i> Message sent successfully!';
+                    }
+                    </script>
+
+            </div>
+            <div class="space-y-6 fade-up">
+                <div class="bg-moss-50 rounded-2xl p-6 shadow-md border border-moss-100">
+                    <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 rounded-full bg-warm-100 flex items-center justify-center text-warm-700"><i class="fas fa-clock text-xl"></i></div><h3 class="font-display text-2xl font-bold text-stone-800">Business Hours</h3></div>
+                    <ul class="space-y-2 text-stone-700"><li class="flex justify-between"><span>Mon – Fri:</span><span class="font-medium">7:00AM – 7:00PM</span></li><li class="flex justify-between"><span>Saturdays:</span><span class="font-medium">7:00AM – 5:00PM</span></li><li class="flex justify-between"><span>Sundays:</span><span class="font-medium text-red-600">Closed</span></li></ul>
+                </div>
+                <div class="bg-moss-50 rounded-2xl p-6 shadow-md border border-moss-100">
+                    <div class="flex items-center gap-3 mb-4"><div class="w-12 h-12 rounded-full bg-warm-100 flex items-center justify-center text-warm-700"><i class="fas fa-map-marker-alt text-xl"></i></div><h3 class="font-display text-2xl font-bold text-stone-800">Visit Us</h3></div>
+                    <p class="text-stone-700 mb-2"><i class="fas fa-location-dot text-moss-600 mr-2"></i> 8248 Barnett Ave, Kansas City, KS 66112</p>
+                    <p class="text-stone-700"><i class="fas fa-envelope text-moss-600 mr-2"></i> <a href="mailto:green@pathviewlandscaping.com" class="hover:text-warm-700">green@pathviewlandscaping.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-stone-900 text-white py-10 px-5 mt-10 rounded-t-2xl">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+        <!-- Columna 1: Logo y lema -->
+        <div>
+            <img src="LOGO.ico" alt="Logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md">
+            <p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p>
+        </div>
+        
+        <!-- Columna 2: Enlaces rápidos -->
+        <div>
+            <h3 class="font-display text-xl mb-3">Quick Links</h3>
+            <ul class="space-y-1">
+                <li><a href="#inicio" class="hover:text-warm-400 text-stone-300 transition">Home</a></li>
+                <li><a href="#services" class="hover:text-warm-400 text-stone-300 transition">Services</a></li>
+                <li><a href="#contact" class="hover:text-warm-400 text-stone-300 transition">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Columna 3: Información de contacto (nueva) -->
+        <div>
+            <h3 class="font-display text-xl mb-3">Contact Info</h3>
+            <ul class="space-y-2 text-stone-300 text-sm">
+                <li class="flex items-center justify-center md:justify-start gap-2">
+                    <i class="fas fa-map-marker-alt text-warm-400 w-5"></i>
+                    <span>8248 Barnett Ave, Kansas City, KS 66112</span>
+                </li>
+                <li class="flex items-center justify-center md:justify-start gap-2">
+                    <i class="fas fa-phone-alt text-warm-400 w-5"></i>
+                    <a href="tel:+19133057052" class="hover:text-warm-400 transition">+1 913-305-7052</a>
+                </li>
+                <li class="flex items-center justify-center md:justify-start gap-2">
+                    <i class="fas fa-envelope text-warm-400 w-5"></i>
+                    <a href="mailto:green@pathviewlandscaping.com" class="hover:text-warm-400 transition">green@pathviewlandscaping.com</a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Columna 4: Redes sociales -->
+        <div>
+            <h3 class="font-display text-xl mb-3">Follow Us</h3>
+            <div class="flex justify-center md:justify-start gap-4 text-2xl">
+                <a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                
+            </div>
+        </div>
+    </div>
+    <hr class="border-stone-700 my-6">
+    <!-- Copyright con el texto exacto solicitado -->
+    <p class="text-center text-stone-400 text-sm">© 2026 Pathview Landscaping. All Rights Reserved.</p>
+    <p class="text-center text-stone-400 text-sm mt-8">Powered by 
+        <a href="https://share.google/BpvWnAWi1xVlBxLzo" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style="color: #b97a44; font-weight: 500; text-decoration: none; border-bottom: 1px dotted #d9b48b;">
+            DesarrolladoresWebMexa
+        </a>
+    </p>
+</footer>
+
+<script>
+    (function() {
+        // ========== CONTADORES CON SUFIJOS ==========
+        const counters = document.querySelectorAll('.counter');
+        if(counters.length) {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-target'), 10);
+                        const suffix = el.getAttribute('data-suffix') || '';
+                        if(isNaN(target)) return;
+                        let current = 0;
+                        const increment = target / 50;
+                        const update = () => {
+                            current += increment;
+                            if(current < target) {
+                                el.textContent = Math.floor(current);
+                                requestAnimationFrame(update);
+                            } else {
+                                el.textContent = target + suffix;
+                            }
+                        };
+                        requestAnimationFrame(update);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.3 });
+            counters.forEach(c => counterObserver.observe(c));
+        }
+
+        // ========== FADE-UP (sin duplicados) ==========
+        const fadeElements = document.querySelectorAll('.fade-up');
+        if(fadeElements.length) {
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeElements.forEach(el => fadeObserver.observe(el));
+        }
+
+        // ========== SCROLL INDICATOR HERO ==========
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        if(scrollIndicator) {
+            scrollIndicator.addEventListener('click', () => {
+                const hero = document.getElementById('inicio');
+                if(hero?.nextElementSibling) hero.nextElementSibling.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                else window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+            });
+            scrollIndicator.addEventListener('keypress', (e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollIndicator.click(); } });
+        }
+
+        // ========== TESTIMONIOS AUTO-SCROLL (optimizado) ==========
+        const container = document.getElementById('testimoniosContainer');
+        if(container) {
+            const leftBtn = document.getElementById('scrollLeftBtn'), rightBtn = document.getElementById('scrollRightBtn');
+            let autoInterval = null, isHovering = false;
+            const SCROLL_DELAY = 4000;
+            const getStep = () => { const card = container.querySelector('.testimonial-card'); if(!card) return 300; const gap = parseInt(getComputedStyle(container).gap) || 24; return card.offsetWidth + gap; };
+            const autoScroll = () => {
+                if(isHovering) return;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                let newLeft = container.scrollLeft + getStep();
+                if(newLeft >= maxScroll) newLeft = 0;
+                container.scrollTo({ left: newLeft, behavior: 'smooth' });
+            };
+            const startAuto = () => { if(autoInterval) clearInterval(autoInterval); autoInterval = setInterval(autoScroll, SCROLL_DELAY); };
+            const stopAuto = () => { if(autoInterval) { clearInterval(autoInterval); autoInterval = null; } };
+            const resetAuto = () => { stopAuto(); startAuto(); };
+            container.addEventListener('mouseenter', () => { isHovering = true; stopAuto(); });
+            container.addEventListener('mouseleave', () => { isHovering = false; startAuto(); });
+            if(leftBtn) leftBtn.addEventListener('click', () => { container.scrollBy({ left: -getStep(), behavior: 'smooth' }); resetAuto(); });
+            if(rightBtn) rightBtn.addEventListener('click', () => { container.scrollBy({ left: getStep(), behavior: 'smooth' }); resetAuto(); });
+            // Drag to scroll
+            let isDragging = false, startX, startLeft;
+            container.addEventListener('mousedown', (e) => { isDragging = true; startX = e.pageX; startLeft = container.scrollLeft; container.style.cursor = 'grabbing'; stopAuto(); });
+            window.addEventListener('mousemove', (e) => { if(isDragging) container.scrollLeft = startLeft - (e.pageX - startX); });
+            window.addEventListener('mouseup', () => { if(isDragging) { isDragging = false; container.style.cursor = 'grab'; startAuto(); } });
+            container.addEventListener('dragstart', (e) => e.preventDefault());
+            container.style.cursor = 'grab';
+            startAuto();
+        }
+
+        // Términos y privacidad (demo)
+        const termsLink = document.getElementById('termsLink');
+        if(termsLink) {
+            termsLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Aquí iría el enlace a términos y condiciones.');
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>

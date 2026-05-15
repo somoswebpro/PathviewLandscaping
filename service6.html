@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Landscape Installation | Pathview Landscaping</title>
+    <!-- TailwindCSS + Font Awesome + Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== COLORES PERSONALIZADOS ==================== */
+        :root {
+            --moss-400: #7a9e5b;
+            --moss-500: #5e8044;
+            --moss-600: #456332;
+            --warm-300: #e4b363;
+            --warm-500: #d69e2e;
+            --warm-600: #b97a44;
+            --stone-600: #5c5248;
+            --stone-800: #3e352c;
+        }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #fefaf5 0%, #fff7f0 100%); color: #2c241e; overflow-x: hidden; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        
+        /* Componentes visuales */
+        .glass-card {
+            background: rgba(255, 250, 240, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(167, 127, 86, 0.25);
+            border-radius: 2rem;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.05);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #b87344 0%, #9e5e36 100%);
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(184, 115, 68, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(184, 115, 68, 0.4); background: linear-gradient(135deg, #c48050 0%, #b0683a 100%); }
+        
+        /* Galería collage */
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            grid-auto-flow: dense;
+        }
+        .collage-item {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            background-color: #f9f7f4;
+            cursor: pointer;
+        }
+        .collage-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+        .collage-item:hover img { transform: scale(1.05); }
+        .collage-item:hover { box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.25); }
+        
+        .collage-tall { grid-row: span 2; min-height: 380px; }
+        .collage-wide { grid-column: span 2; }
+        .collage-large { grid-column: span 2; grid-row: span 2; min-height: 460px; }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+        }
+        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 1rem; }
+        .close-lightbox {
+            position: absolute; top: 25px; right: 35px; color: white; font-size: 40px; cursor: pointer;
+            background: none; border: none;
+        }
+        @media (max-width: 768px) {
+            .collage-grid { gap: 1rem; }
+            .collage-tall, .collage-wide, .collage-large { grid-column: span 1; grid-row: span 1; }
+        }
+        
+        /* Utilidades de color */
+        .bg-moss-500 { background-color: var(--moss-500); }
+        .bg-warm-500 { background-color: var(--warm-500); }
+        .bg-warm-600 { background-color: var(--warm-600); }
+        .text-moss-500 { color: var(--moss-500); }
+        .text-warm-500 { color: var(--warm-500); }
+        .text-warm-600 { color: var(--warm-600); }
+        .text-stone-800 { color: var(--stone-800); }
+        .border-warm-300 { border-color: var(--warm-300); }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #ede4db; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #9bb88b; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR FLOTANTE ========== -->
+    <nav class="fixed top-0 w-full z-50 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card py-2.5 px-4 sm:px-6 flex justify-between items-center shadow-md">
+                <div class="flex items-center gap-2 sm:gap-3 group cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-warm-600 flex items-center justify-center group-hover:scale-110 transition overflow-hidden">
+                        <img src="LOGO.ico" alt="Logo PATHVIEW" class="w-full h-full object-cover">
+                    </div>
+                    <div class="leading-tight">
+                        <span class="font-display text-lg sm:text-2xl font-bold text-stone-800 tracking-tight block">PATHVIEW</span>
+                        <span class="font-display text-xs sm:text-sm font-semibold text-warm-600 block -mt-0.5">LANDSCAPING</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex gap-6 lg:gap-8 items-center text-stone-700 font-medium">
+                    <a href="index.html?section=home" class="hover:text-warm-600 transition relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                    <a href="index.html?section=about" class="hover:text-warm-600 transition relative group">About Us<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                    <a href="index.html?section=services" class="hover:text-warm-600 transition relative group">Our Services<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                    <a href="index.html?section=testimonials" class="hover:text-warm-600 transition relative group">Testimonials<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
+                    <a href="index.html?section=contact" class="btn-primary px-5 py-2 text-sm font-semibold">Contact Us</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-stone-700 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-2 glass-card p-4 flex flex-col gap-2 backdrop-blur-md rounded-2xl shadow-xl">
+                <a href="index.html?section=home" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-300 font-medium">Home</a>
+                <a href="index.html?section=about" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-300 font-medium">About Us</a>
+                <a href="index.html?section=services" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-300 font-medium">Our Services</a>
+                <a href="index.html?section=testimonials" class="py-2.5 text-stone-800 hover:text-warm-700 border-b border-warm-300 font-medium">Testimonials</a>
+                <a href="index.html?section=contact" class="btn-primary text-center py-3 rounded-full font-semibold mt-2">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Efecto scroll navbar
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                const gc = navbar.querySelector('.glass-card');
+                if (window.scrollY > 20) {
+                    navbar.classList.add('py-2'); navbar.classList.remove('py-4');
+                    gc?.classList.add('shadow-lg', 'bg-white/90');
+                } else {
+                    navbar.classList.add('py-4'); navbar.classList.remove('py-2');
+                    gc?.classList.remove('shadow-lg', 'bg-white/90');
+                }
+            });
+        }
+        // Menú móvil
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileBtn.querySelector('i');
+                icon?.classList.toggle('fa-times', !mobileMenu.classList.contains('hidden'));
+                icon?.classList.toggle('fa-bars', mobileMenu.classList.contains('hidden'));
+                document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    const icon = mobileBtn.querySelector('i');
+                    if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+                });
+            });
+        }
+    </script>
+
+    <!-- Hero principal: Landscape Installation -->
+    <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden mt-16">
+        <img src="img49.jpeg" alt="Instalación de paisajismo" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6 max-w-4xl mx-auto">
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">Landscape Installation</h1>
+            <p class="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed">
+                Transformamos por completo tu jardín con nuevas camas de plantas, arbustos, rocallas, mantillo y elementos decorativos. Diseños que armonizan con tu hogar.
+            </p>
+            <button class="mt-6 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
+                 <a href="index.html?section=contact" section-link>Contact Us</a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Galería collage (12 imágenes - más espacios) -->
+    <div class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+        <div class="text-center mb-16">
+            <span class="text-moss-500 font-semibold uppercase tracking-wider text-sm"><i class="fas fa-images mr-1"></i> Nuestros proyectos</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-stone-800 mt-2">Inspiración para tu jardín</h2>
+            <div class="w-24 h-1 bg-warm-500 mt-4 rounded-full mx-auto"></div>
+            <p class="text-stone-600 max-w-2xl mx-auto mt-4">Más de 12 proyectos reales que muestran la calidad y el estilo de nuestro trabajo.</p>
+        </div>
+
+        <div class="collage-grid">
+            <!-- 1. Jardín frontal amplio (wide) -->
+            <div class="collage-item collage-wide" data-image="https://placehold.co/1200x600/7a9e5b/ffffff?text=Jardín+frontal+premium">
+                <img src="img43.jpeg" alt="Jardín frontal con plantas ornamentales" loading="lazy">
+            </div>
+            <!-- 2. Camas elevadas verticales (tall) -->
+            <div class="collage-item collage-tall" data-image="https://placehold.co/600x900/8aab6e/ffffff?text=Camas+elevadas">
+                <img src="img44.jpeg" alt="Camas elevadas de madera" loading="lazy">
+            </div>
+            <!-- 3. Rocalla con suculentas (normal) -->
+            <div class="collage-item" data-image="https://placehold.co/600x600/afcd8f/ffffff?text=Rocalla+moderna">
+                <img src="img45.jpeg" alt="Rocalla con suculentas" loading="lazy">
+            </div>
+            <!-- 4. Jardín tropical completo (large 2x2) -->
+            <div class="collage-item collage-large" data-image="https://placehold.co/1000x1000/456332/ffffff?text=Jardín+tropical">
+                <img src="img46.jpeg" alt="Jardín tropical con palmeras" loading="lazy">
+            </div>
+            <!-- 5. Sendero de gravilla (wide) -->
+            <div class="collage-item collage-wide" data-image="https://placehold.co/1100x550/97b67a/ffffff?text=Sendero+de+gravilla">
+                <img src="img47.jpeg" alt="Sendero de gravilla entre arbustos" loading="lazy">
+            </div>
+            <!-- 6. Muro verde vertical (tall) -->
+            <div class="collage-item collage-tall" data-image="https://placehold.co/550x850/5e8044/ffffff?text=Muro+verde">
+                <img src="img48.jpeg" alt="Muro verde vertical" loading="lazy">
+            </div>
+            <!-- 7. Área de mantillo y arbustos (normal) -->
+            <div class="collage-item" data-image="https://placehold.co/500x500/c4d6b0/ffffff?text=Mantillo+decorativo">
+                <img src="img49.jpeg" alt="Mantillo con arbustos" loading="lazy">
+            </div>
+            <!-- 8. Jardín de lluvia (normal) -->
+            <div class="collage-item" data-image="https://placehold.co/700x500/9bb88b/ffffff?text=Jardín+de+lluvia">
+                <img src="img50.jpeg" alt="Jardín de lluvia con plantas nativas" loading="lazy">
+            </div>
+            <!-- 9. Macizos de flores perennes (wide extra) -->
+            <div class="collage-item collage-wide" data-image="https://placehold.co/1100x550/e4b363/ffffff?text=Macizos+de+flores">
+                <img src="img51.jpeg" alt="Macizos de flores coloridas" loading="lazy">
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de contacto -->
+    <div id="contact-section" class="bg-moss-500/10 py-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="font-display text-3xl font-bold text-stone-800">¿Listo para transformar tu espacio exterior?</h3>
+            <p class="mt-2 text-stone-600">Déjanos tus datos y te asesoramos sin compromiso.</p>
+            <button class="mt-6 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
+                 <a href="index.html?section=contact" section-link>Contact Us</a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="close-lightbox">&times;</button>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+    </div>
+
+    <footer class="bg-stone-900 text-white py-10 px-5 mt-10 rounded-t-2xl">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div><img src="LOGO.ico" alt="Logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md"><p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p></div>
+            <div><h3 class="font-display text-xl mb-3">Quick Links</h3><ul class="space-y-1"><li><a href="index.html?section=home" class="hover:text-warm-400 text-stone-300 transition">Home</a></li><li><a href="index.html?section=services" class="hover:text-warm-400 text-stone-300 transition">Services</a></li><li><a href="index.html?section=contact" class="hover:text-warm-400 text-stone-300 transition">Contact</a></li></ul></div>
+            <div><h3 class="font-display text-xl mb-3">Contact Info</h3><ul class="space-y-2 text-stone-300 text-sm"><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-map-marker-alt text-warm-400 w-5"></i><span>8248 Barnett Ave, Kansas City, KS 66112</span></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-phone-alt text-warm-400 w-5"></i><a href="tel:+19133057052" class="hover:text-warm-400 transition">+1 913-305-7052</a></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-envelope text-warm-400 w-5"></i><a href="mailto:green@pathviewlandscaping.com" class="hover:text-warm-400 transition">green@pathviewlandscaping.com</a></li></ul></div>
+            <div><h3 class="font-display text-xl mb-3">Follow Us</h3><div class="flex justify-center md:justify-start gap-4 text-2xl"><a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition"><i class="fab fa-instagram"></i></a></div></div>
+        </div>
+        <hr class="border-stone-700 my-6">
+        <p class="text-center text-stone-400 text-sm">© 2026 Pathview Landscaping. All Rights Reserved.</p>
+        <p class="text-center text-stone-400 text-sm mt-8">Powered by <a href="https://share.google/BpvWnAWi1xVlBxLzo" target="_blank" rel="noopener noreferrer" style="color: #b97a44; font-weight: 500; text-decoration: none; border-bottom: 1px dotted #d9b48b;">DesarrolladoresWebMexa</a></p>
+    </footer>
+
+    <script>
+        // Lightbox funcional
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-lightbox');
+        const galleryItems = document.querySelectorAll('.collage-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const imgElement = item.querySelector('img');
+                if (imgElement && imgElement.src) {
+                    lightboxImg.src = imgElement.src;
+                    lightbox.style.display = 'flex';
+                } else {
+                    const dataImg = item.getAttribute('data-image');
+                    if (dataImg) lightboxImg.src = dataImg;
+                }
+            });
+        });
+
+        function closeLightbox() { lightbox.style.display = 'none'; lightboxImg.src = ''; }
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.style.display === 'flex') closeLightbox(); });
+    </script>
+</body>
+</html>
