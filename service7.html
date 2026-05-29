@@ -245,14 +245,15 @@
         </div>
     </div>
 
-    <!-- Contact section (updated with second HTML content, translated) -->
+    
+    <!-- Sección de contacto -->
     <div id="contact-section" class="bg-moss-500/10 py-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h3 class="font-display text-3xl font-bold text-stone-800">Need to grade your land or improve drainage?</h3>
-            <p class="mt-2 text-stone-600">Leave us your details and we'll advise you with no obligation.</p>
-            <a href="#contact-form" class="mt-6 inline-flex items-center gap-2 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
-                <i class="fas fa-envelope mr-2"></i> Request Information
-            </a>
+            <h3 class="font-display text-3xl font-bold text-stone-800">Looking for an efficient irrigation system?</h3>
+            <p class="mt-2 text-stone-600">Leave us your details and we will advise you with no obligation.</p>
+            <button class="mt-6 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
+                <a href="index.html?section=contact" section-link>Contact Us</a>
+            </button>
         </div>
     </div>
 
@@ -264,10 +265,10 @@
 
     <footer class="bg-stone-900 text-white py-10 px-5 mt-10 rounded-t-2xl">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-            <div><img src="LOGO.ico" alt="Pathview Landscaping logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md"><p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p></div>
+            <div><img src="LOGO.ico" alt="PATHVIEW Logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md"><p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p></div>
             <div><h3 class="font-display text-xl mb-3">Quick Links</h3><ul class="space-y-1"><li><a href="index.html?section=home" class="hover:text-warm-400 text-stone-300 transition">Home</a></li><li><a href="index.html?section=services" class="hover:text-warm-400 text-stone-300 transition">Services</a></li><li><a href="index.html?section=contact" class="hover:text-warm-400 text-stone-300 transition">Contact</a></li></ul></div>
             <div><h3 class="font-display text-xl mb-3">Contact Info</h3><ul class="space-y-2 text-stone-300 text-sm"><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-map-marker-alt text-warm-400 w-5"></i><span>8248 Barnett Ave, Kansas City, KS 66112</span></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-phone-alt text-warm-400 w-5"></i><a href="tel:+19133057052" class="hover:text-warm-400 transition">+1 913-305-7052</a></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-envelope text-warm-400 w-5"></i><a href="mailto:green@pathviewlandscaping.com" class="hover:text-warm-400 transition">green@pathviewlandscaping.com</a></li></ul></div>
-            <div><h3 class="font-display text-xl mb-3">Follow Us</h3><div class="flex justify-center md:justify-start gap-4 text-2xl"><a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition"><i class="fab fa-instagram"></i></a></div></div>
+            <div><h3 class="font-display text-xl mb-3">Follow Us</h3><div class="flex justify-center md:justify-start gap-4 text-2xl"><a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
         </div>
         <hr class="border-stone-700 my-6">
         <p class="text-center text-stone-400 text-sm">© 2026 Pathview Landscaping. All Rights Reserved.</p>
@@ -275,7 +276,7 @@
     </footer>
 
     <script>
-        // Lightbox functionality
+        // Lightbox funcional
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.close-lightbox');
