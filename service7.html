@@ -85,9 +85,56 @@
             position: absolute; top: 25px; right: 35px; color: white; font-size: 40px; cursor: pointer;
             background: none; border: none;
         }
+        
+        /* ========== RESPONSIVE FOOTER Y MEJORAS MÓVIL ========== */
         @media (max-width: 768px) {
             .collage-grid { gap: 1rem; }
             .collage-tall, .collage-wide, .collage-large { grid-column: span 1; grid-row: span 1; }
+            
+            /* Footer mejorado para móvil: más grande, táctil y legible */
+            footer {
+                padding: 2rem 1rem !important;
+                border-radius: 1.5rem 1.5rem 0 0 !important;
+            }
+            footer .grid {
+                gap: 1.75rem !important;
+            }
+            footer h3 {
+                font-size: 1.5rem !important; /* 24px en lugar de 20px */
+                margin-bottom: 0.75rem !important;
+            }
+            footer ul li a, 
+            footer ul li span,
+            footer .text-stone-300 {
+                font-size: 1rem !important; /* 16px base */
+                line-height: 1.5 !important;
+            }
+            footer ul li {
+                padding: 0.5rem 0 !important; /* Mayor área táctil */
+            }
+            footer .flex.items-center.gap-2 i {
+                font-size: 1.25rem !important; /* Iconos más grandes */
+                width: 1.75rem !important;
+            }
+            footer .text-2xl {
+                font-size: 2rem !important; /* Iconos sociales más grandes */
+                gap: 1.5rem !important;
+            }
+            footer img.w-16 {
+                width: 3.5rem !important;
+                margin-bottom: 0.5rem;
+            }
+            footer p.text-sm {
+                font-size: 0.875rem !important;
+            }
+            footer hr {
+                margin: 1.5rem 0 !important;
+            }
+            /* Ajuste del texto copyright y créditos */
+            footer .text-center.text-stone-400.text-sm {
+                font-size: 0.8rem !important;
+                line-height: 1.4;
+            }
         }
         
         /* Utilidades de color */
@@ -157,7 +204,7 @@
                 }
             });
         }
-        // Menú móvil
+        // Menú móvil con cierre correcto y scroll libre
         const mobileBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         if (mobileBtn && mobileMenu) {
@@ -179,23 +226,22 @@
         }
     </script>
 
-    
-    <!-- Main hero (updated to Grading & Drainage) -->
-    <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden mt-16">
+    <!-- Main hero (Grading & Drainage) -->
+    <div class="relative w-full h-[70vh] min-h-[480px] overflow-hidden mt-16">
         <img src="img52.jpeg" alt="Grading and drainage hero background" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
         <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6 max-w-4xl mx-auto">
             <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">Grading & Drainage</h1>
-            <p class="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed">
+            <p class="text-base md:text-xl max-w-2xl mb-6 md:mb-8 text-white/90 leading-relaxed">
                 Professional grading, drainage, and runoff control solutions. We protect your property against flooding and erosion, creating functional and safe terrain.
             </p>
-            <a href="#contact-section" class="bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl flex items-center gap-2 text-lg">
+            <a href="#contact-section" class="bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-2.5 px-6 md:py-3 md:px-8 rounded-full transition-all shadow-lg hover:shadow-xl flex items-center gap-2 text-base md:text-lg">
                 <i class="fas fa-calendar-alt"></i> Contact Us
             </a>
         </div>
     </div>
 
-    <!-- Collage gallery (12 images from second HTML, alt texts translated) -->
+    <!-- Collage gallery (12 imágenes, ahora todas con contenido real o placeholder lógico) -->
     <div class="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <div class="text-center mb-16">
             <span class="text-moss-500 font-semibold uppercase tracking-wider text-sm"><i class="fas fa-images mr-1"></i> Our Projects</span>
@@ -206,34 +252,39 @@
 
         <div class="collage-grid">
             <!-- 1. Extensive land grading (wide) -->
-            <div class="collage-item collage-wide" data-image="https://placehold.co/1200x600/9e8b72/ffffff?text=Nivelación+de+gran+terreno">
+            <div class="collage-item collage-wide">
                 <img src="img52.jpeg" alt="Extensive land grading" loading="lazy">
             </div>
             <!-- 2. French drain installation (tall) -->
-            <div class="collage-item collage-tall" data-image="https://placehold.co/600x900/b8a17f/ffffff?text=Drenaje+francés">
+            <div class="collage-item collage-tall">
                 <img src="img53.jpeg" alt="French drain installation" loading="lazy">
             </div>
-            <!-- 3. Catch basin (normal) -->
-            <div class="collage-item" data-image="https://placehold.co/600x600/a68c64/ffffff?text=Cárcamo+de+captación">
+            <!-- 3. Catch basin -->
+            <div class="collage-item">
                 <img src="img54.jpeg" alt="Catch basin for water collection" loading="lazy">
             </div>
-            <!-- 5. Surface drainage channel (wide) -->
-            <div class="collage-item collage-wide" data-image="https://placehold.co/1100x550/c2ab82/ffffff?text=Canal+de+drenaje">
-                <img src="" alt="Surface drainage channel" loading="lazy">
+            <!-- 4. Surface drainage channel (wide) - corregido con imagen real o placeholder -->
+            <div class="collage-item collage-wide">
+                <img src="img55.jpeg" alt="Surface drainage channel" loading="lazy" onerror="this.src='https://placehold.co/1100x550/c2ab82/ffffff?text=Canal+de+drenaje+superficial'">
             </div>
-            <!-- 6. Stormwater grate (tall) -->
-            <div class="collage-item collage-tall" data-image="https://placehold.co/550x850/ae966e/ffffff?text=Rejilla+pluvial">
-                <img src="" alt="Stormwater grate inlet" loading="lazy">
+            <!-- 5. Stormwater grate (tall) -->
+            <div class="collage-item collage-tall">
+                <img src="img56.jpeg" alt="Stormwater grate inlet" loading="lazy" onerror="this.src='https://placehold.co/550x850/ae966e/ffffff?text=Rejilla+pluvial'">
+            </div>
+            <!-- 6. Slope stabilization (normal) -->
+            <div class="collage-item">
+                <img src="img57.jpeg" alt="Slope stabilization with drainage" loading="lazy" onerror="this.src='https://placehold.co/600x600/a68c64/ffffff?text=Estabilización+de+talud'">
             </div>
         </div>
+    </div>
 
     <!-- Sección de contacto -->
     <div id="contact-section" class="bg-moss-500/10 py-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h3 class="font-display text-3xl font-bold text-stone-800">Looking for an efficient irrigation system?</h3>
-            <p class="mt-2 text-stone-600">Leave us your details and we will advise you with no obligation.</p>
+            <h3 class="font-display text-2xl md:text-3xl font-bold text-stone-800">Looking for an efficient grading & drainage system?</h3>
+            <p class="mt-2 text-stone-600 text-base md:text-lg">Leave us your details and we will advise you with no obligation.</p>
             <button class="mt-6 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
-                <a href="index.html?section=contact" section-link>Contact Us</a>
+                <a href="index.html?section=contact">Contact Us</a>
             </button>
         </div>
     </div>
@@ -244,20 +295,44 @@
         <img id="lightbox-img" src="" alt="Enlarged view">
     </div>
 
-    <footer class="bg-stone-900 text-white py-10 px-5 mt-10 rounded-t-2xl">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-            <div><img src="LOGO.ico" alt="PATHVIEW Logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md"><p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p></div>
-            <div><h3 class="font-display text-xl mb-3">Quick Links</h3><ul class="space-y-1"><li><a href="index.html?section=home" class="hover:text-warm-400 text-stone-300 transition">Home</a></li><li><a href="index.html?section=services" class="hover:text-warm-400 text-stone-300 transition">Services</a></li><li><a href="index.html?section=contact" class="hover:text-warm-400 text-stone-300 transition">Contact</a></li></ul></div>
-            <div><h3 class="font-display text-xl mb-3">Contact Info</h3><ul class="space-y-2 text-stone-300 text-sm"><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-map-marker-alt text-warm-400 w-5"></i><span>8248 Barnett Ave, Kansas City, KS 66112</span></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-phone-alt text-warm-400 w-5"></i><a href="tel:+19133057052" class="hover:text-warm-400 transition">+1 913-305-7052</a></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-envelope text-warm-400 w-5"></i><a href="mailto:green@pathviewlandscaping.com" class="hover:text-warm-400 transition">green@pathviewlandscaping.com</a></li></ul></div>
-            <div><h3 class="font-display text-xl mb-3">Follow Us</h3><div class="flex justify-center md:justify-start gap-4 text-2xl"><a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+    <!-- FOOTER MEJORADO (RESPONSIVE) -->
+    <footer class="bg-stone-900 text-white py-10 md:py-12 px-5 mt-10 rounded-t-2xl">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left">
+            <div>
+                <img src="LOGO.ico" alt="PATHVIEW Logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md mb-2">
+                <p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p>
+            </div>
+            <div>
+                <h3 class="font-display text-xl md:text-2xl mb-3">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html?section=home" class="hover:text-warm-400 text-stone-300 transition block py-1">Home</a></li>
+                    <li><a href="index.html?section=services" class="hover:text-warm-400 text-stone-300 transition block py-1">Services</a></li>
+                    <li><a href="index.html?section=contact" class="hover:text-warm-400 text-stone-300 transition block py-1">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-display text-xl md:text-2xl mb-3">Contact Info</h3>
+                <ul class="space-y-3 text-stone-300 text-sm md:text-base">
+                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-map-marker-alt text-warm-400 w-5 text-base"></i><span>8248 Barnett Ave, Kansas City, KS 66112</span></li>
+                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-phone-alt text-warm-400 w-5 text-base"></i><a href="tel:+19133057052" class="hover:text-warm-400 transition">+1 913-305-7052</a></li>
+                    <li class="flex items-center justify-center md:justify-start gap-3"><i class="fas fa-envelope text-warm-400 w-5 text-base"></i><a href="mailto:green@pathviewlandscaping.com" class="hover:text-warm-400 transition">green@pathviewlandscaping.com</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-display text-xl md:text-2xl mb-3">Follow Us</h3>
+                <div class="flex justify-center md:justify-start gap-6 text-3xl md:text-2xl">
+                    <a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
-        <hr class="border-stone-700 my-6">
+        <hr class="border-stone-700 my-6 md:my-8">
         <p class="text-center text-stone-400 text-sm">© 2026 Pathview Landscaping. All Rights Reserved.</p>
-        <p class="text-center text-stone-400 text-sm mt-8">Powered by <a href="https://share.google/BpvWnAWi1xVlBxLzo" target="_blank" rel="noopener noreferrer" style="color: #b97a44; font-weight: 500; text-decoration: none; border-bottom: 1px dotted #d9b48b;">DesarrolladoresWebMexa</a></p>
+        <p class="text-center text-stone-400 text-sm mt-4">Powered by <a href="https://share.google/BpvWnAWi1xVlBxLzo" target="_blank" rel="noopener noreferrer" style="color: #b97a44; font-weight: 500; text-decoration: none; border-bottom: 1px dotted #d9b48b;">DesarrolladoresWebMexa</a></p>
     </footer>
 
     <script>
-        // Lightbox funcional
+        // Lightbox funcional mejorado
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.close-lightbox');
@@ -267,12 +342,13 @@
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const imgElement = item.querySelector('img');
-                if (imgElement && imgElement.src) {
+                if (imgElement && imgElement.src && imgElement.src !== '') {
                     lightboxImg.src = imgElement.src;
                     lightbox.style.display = 'flex';
                 } else {
-                    const dataImg = item.getAttribute('data-image');
-                    if (dataImg) lightboxImg.src = dataImg;
+                    // Si no hay imagen real, mostrar mensaje o placeholder
+                    lightboxImg.src = 'https://placehold.co/1200x800/e2d9cf/5e4b3a?text=Imagen+no+disponible';
+                    lightbox.style.display = 'flex';
                 }
             });
         });
