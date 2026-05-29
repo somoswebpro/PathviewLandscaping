@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        /* ==================== COLORES PERSONALIZADOS ==================== */
+        /* ==================== CUSTOM COLORS ==================== */
         :root {
             --moss-400: #7a9e5b;
             --moss-500: #5e8044;
@@ -23,7 +23,7 @@
         body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #fefaf5 0%, #fff7f0 100%); color: #2c241e; overflow-x: hidden; }
         .font-display { font-family: 'Playfair Display', serif; }
         
-        /* Componentes visuales */
+        /* Visual components */
         .glass-card {
             background: rgba(255, 250, 240, 0.95);
             backdrop-filter: blur(12px);
@@ -42,7 +42,7 @@
         }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(184, 115, 68, 0.4); background: linear-gradient(135deg, #c48050 0%, #b0683a 100%); }
         
-        /* Galería collage (sin opacidades iniciales) */
+        /* Gallery collage (no initial opacity) */
         .collage-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -90,7 +90,7 @@
             .collage-tall, .collage-wide, .collage-large { grid-column: span 1; grid-row: span 1; }
         }
         
-        /* Utilidades de color */
+        /* Color utilities */
         .bg-moss-500 { background-color: var(--moss-500); }
         .bg-warm-500 { background-color: var(--warm-500); }
         .bg-warm-600 { background-color: var(--warm-600); }
@@ -110,7 +110,7 @@
 </head>
 <body>
 
-    <!-- ========== NAVBAR FLOTANTE ========== -->
+    <!-- ========== FLOATING NAVBAR ========== -->
     <nav class="fixed top-0 w-full z-50 py-4 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-card py-2.5 px-4 sm:px-6 flex justify-between items-center shadow-md">
@@ -145,7 +145,7 @@
     </nav>
 
     <script>
-        // Efecto scroll navbar
+        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         if (navbar) {
             window.addEventListener('scroll', () => {
@@ -159,7 +159,7 @@
                 }
             });
         }
-        // Menú móvil
+        // Mobile menu
         const mobileBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         if (mobileBtn && mobileMenu) {
@@ -181,14 +181,14 @@
         }
     </script>
 
-    <!-- Hero principal (sin opacidad inicial) -->
+    <!-- Main Hero (no initial opacity) -->
     <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden mt-16">
-        <img src="patio1.jpeg" alt="Paver patio destacado" class="absolute inset-0 w-full h-full object-cover">
+        <img src="patio1.jpeg" alt="Featured paver patio" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
         <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6 max-w-4xl mx-auto">
             <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg">Paver & Concrete Patios</h1>
             <p class="text-lg md:text-xl max-w-2xl mb-8 text-white/90 leading-relaxed">
-                Transformamos tu patio en un espacio elegante y duradero. Diseños personalizados en adocreto, concreto estampado y acabados premium.
+                We transform your patio into an elegant and durable space. Custom designs in pavers, stamped concrete, and premium finishes.
             </p>
             <button class="mt-6 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
                  <a href="index.html?section=contact" section-link>Contact Us</a>
@@ -196,48 +196,48 @@
         </div>
     </div>
 
-    <!-- Galería collage -->
+    <!-- Collage Gallery -->
     <div class="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <div class="text-center mb-16">
-            <span class="text-moss-500 font-semibold uppercase tracking-wider text-sm"><i class="fas fa-images mr-1"></i> Nuestros proyectos</span>
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-stone-800 mt-2">Galería de inspiración</h2>
+            <span class="text-moss-500 font-semibold uppercase tracking-wider text-sm"><i class="fas fa-images mr-1"></i> Our projects</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-stone-800 mt-2">Inspiration Gallery</h2>
             <div class="w-24 h-1 bg-warm-500 mt-4 rounded-full mx-auto"></div>
-            <p class="text-stone-600 max-w-2xl mx-auto mt-4">Diseños exclusivos que combinan funcionalidad y estética.</p>
+            <p class="text-stone-600 max-w-2xl mx-auto mt-4">Exclusive designs that combine functionality and aesthetics.</p>
         </div>
 
         <div class="collage-grid">
             <div class="collage-item collage-wide" data-image="https://placehold.co/1200x600/5e8044/ffffff?text=Patio+de+lujo">
-                <img src="patio1.jpeg" alt="Patio de lujo con pérgola" loading="lazy">
+                <img src="patio1.jpeg" alt="Luxury patio with pergola" loading="lazy">
             </div>
             <div class="collage-item collage-tall" data-image="https://placehold.co/600x900/8aab6e/ffffff?text=Detalle+estampado">
-                <img src="patio2.jpeg" alt="Concreto estampado textura" loading="lazy">
+                <img src="patio2.jpeg" alt="Stamped concrete texture" loading="lazy">
             </div>
             <div class="collage-item" data-image="https://placehold.co/600x600/e4b363/ffffff?text=Zona+fogata">
-                <img src="patio3.jpeg" alt="Patio con fogata" loading="lazy">
+                <img src="patio3.jpeg" alt="Patio with fire pit" loading="lazy">
             </div>
             <div class="collage-item collage-large" data-image="https://placehold.co/1000x1000/456332/ffffff?text=Diseño+integral">
-                <img src="patio4.jpeg" alt="Patio completo con cocina exterior" loading="lazy">
+                <img src="patio4.jpeg" alt="Complete patio with outdoor kitchen" loading="lazy">
             </div>
             <div class="collage-item collage-wide" data-image="https://placehold.co/1100x550/7a9e5b/ffffff?text=Caminos+de+adoquin">
-                <img src="patio5.jpeg" alt="Caminos de adoquín" loading="lazy">
+                <img src="patio5.jpeg" alt="Paver walkways" loading="lazy">
             </div>
             <div class="collage-item collage-tall" data-image="https://placehold.co/550x850/d69e2e/ffffff?text=Borde+de+piscina">
-                <img src="patio6.jpeg" alt="Borde de piscina en piedra" loading="lazy">
+                <img src="patio6.jpeg" alt="Stone pool coping" loading="lazy">
             </div>
             <div class="collage-item" data-image="https://placehold.co/500x500/afcd8f/ffffff?text=Detalle+moderno">
-                <img src="patio7.jpeg" alt="Detalle de patrón moderno" loading="lazy">
+                <img src="patio7.jpeg" alt="Modern pattern detail" loading="lazy">
             </div>
             <div class="collage-item" data-image="https://placehold.co/700x500/97b67a/ffffff?text=Iluminacion+perimetral">
-                <img src="patio8.jpeg" alt="Patio con iluminación LED" loading="lazy">
+                <img src="patio8.jpeg" alt="Patio with LED lighting" loading="lazy">
             </div>
         </div>
     </div>
 
-    <!-- Sección de contacto -->
+    <!-- Contact Section -->
     <div id="contact-section" class="bg-moss-500/10 py-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h3 class="font-display text-3xl font-bold text-stone-800">¿Listo para transformar tu espacio exterior?</h3>
-            <p class="mt-2 text-stone-600">Déjanos tus datos y te asesoramos sin compromiso.</p>
+            <h3 class="font-display text-3xl font-bold text-stone-800">Ready to transform your outdoor space?</h3>
+            <p class="mt-2 text-stone-600">Leave us your details and we will advise you with no obligation.</p>
             <button class="mt-6 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
                 <a href="index.html?section=contact" section-link>Contact Us</a>
             </button>
@@ -247,7 +247,7 @@
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
         <button class="close-lightbox">&times;</button>
-        <img id="lightbox-img" src="" alt="Vista ampliada">
+        <img id="lightbox-img" src="" alt="Enlarged view">
     </div>
 
     <footer class="bg-stone-900 text-white py-10 px-5 mt-10 rounded-t-2xl">
@@ -263,7 +263,7 @@
     </footer>
 
     <script>
-        // Lightbox funcional
+        // Functional lightbox
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.close-lightbox');
