@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Grading & Drainage | Pathview Landscaping</title>
+    <title>Sprinkler Systems | Pathview Landscaping</title>
     <!-- TailwindCSS + Font Awesome + Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        /* ==================== CUSTOM COLORS ==================== */
+        /* ==================== COLORES PERSONALIZADOS ==================== */
         :root {
             --moss-400: #7a9e5b;
             --moss-500: #5e8044;
@@ -23,7 +23,7 @@
         body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #fefaf5 0%, #fff7f0 100%); color: #2c241e; overflow-x: hidden; }
         .font-display { font-family: 'Playfair Display', serif; }
         
-        /* Visual components */
+        /* Componentes visuales */
         .glass-card {
             background: rgba(255, 250, 240, 0.95);
             backdrop-filter: blur(12px);
@@ -42,7 +42,7 @@
         }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(184, 115, 68, 0.4); background: linear-gradient(135deg, #c48050 0%, #b0683a 100%); }
         
-        /* Gallery collage (no initial opacities) */
+        /* Galería collage */
         .collage-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -90,7 +90,7 @@
             .collage-tall, .collage-wide, .collage-large { grid-column: span 1; grid-row: span 1; }
         }
         
-        /* Color utilities */
+        /* Utilidades de color */
         .bg-moss-500 { background-color: var(--moss-500); }
         .bg-warm-500 { background-color: var(--warm-500); }
         .bg-warm-600 { background-color: var(--warm-600); }
@@ -99,8 +99,6 @@
         .text-warm-600 { color: var(--warm-600); }
         .text-stone-800 { color: var(--stone-800); }
         .border-warm-300 { border-color: var(--warm-300); }
-        .hover\:bg-warm-600:hover { background-color: var(--warm-600); }
-        .hover\:text-warm-700:hover { color: #a05c2c; }
         
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -110,13 +108,13 @@
 </head>
 <body>
 
-    <!-- ========== FLOATING NAVBAR ========== -->
+    <!-- ========== NAVBAR FLOTANTE ========== -->
     <nav class="fixed top-0 w-full z-50 py-4 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-card py-2.5 px-4 sm:px-6 flex justify-between items-center shadow-md">
                 <div class="flex items-center gap-2 sm:gap-3 group cursor-pointer" onclick="window.location.href='index.html'">
                     <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-warm-600 flex items-center justify-center group-hover:scale-110 transition overflow-hidden">
-                        <img src="LOGO.ico" alt="PATHVIEW logo" class="w-full h-full object-cover">
+                        <img src="LOGO.ico" alt="PATHVIEW Logo" class="w-full h-full object-cover">
                     </div>
                     <div class="leading-tight">
                         <span class="font-display text-lg sm:text-2xl font-bold text-stone-800 tracking-tight block">PATHVIEW</span>
@@ -130,7 +128,7 @@
                     <a href="index.html?section=testimonials" class="hover:text-warm-600 transition relative group">Testimonials<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-warm-600 group-hover:w-full transition-all"></span></a>
                     <a href="index.html?section=contact" class="btn-primary px-5 py-2 text-sm font-semibold">Contact Us</a>
                 </div>
-                <button id="mobileMenuBtn" class="md:hidden text-stone-700 text-2xl focus:outline-none">
+                <button id="mobileMenuBtn" class="md:hidden text-stone-700 text-2xl focus:outline-none" aria-label="Mobile menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -145,7 +143,7 @@
     </nav>
 
     <script>
-        // Navbar scroll effect
+        // Efecto scroll navbar
         const navbar = document.getElementById('navbar');
         if (navbar) {
             window.addEventListener('scroll', () => {
@@ -159,7 +157,7 @@
                 }
             });
         }
-        // Mobile menu
+        // Menú móvil
         const mobileBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         if (mobileBtn && mobileMenu) {
@@ -181,6 +179,7 @@
         }
     </script>
 
+    
     <!-- Main hero (updated to Grading & Drainage) -->
     <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden mt-16">
         <img src="img52.jpeg" alt="Grading and drainage hero background" class="absolute inset-0 w-full h-full object-cover">
@@ -227,11 +226,11 @@
                 <img src="" alt="Stormwater grate inlet" loading="lazy">
             </div>
         </div>
-    
-    <!-- Contact Section -->
+
+    <!-- Sección de contacto -->
     <div id="contact-section" class="bg-moss-500/10 py-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h3 class="font-display text-3xl font-bold text-stone-800">Ready to transform your outdoor space?</h3>
+            <h3 class="font-display text-3xl font-bold text-stone-800">Looking for an efficient irrigation system?</h3>
             <p class="mt-2 text-stone-600">Leave us your details and we will advise you with no obligation.</p>
             <button class="mt-6 bg-warm-500 hover:bg-warm-600 text-stone-900 font-semibold py-3 px-8 rounded-full transition shadow">
                 <a href="index.html?section=contact" section-link>Contact Us</a>
@@ -247,10 +246,10 @@
 
     <footer class="bg-stone-900 text-white py-10 px-5 mt-10 rounded-t-2xl">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-            <div><img src="LOGO.ico" alt="Logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md"><p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p></div>
+            <div><img src="LOGO.ico" alt="PATHVIEW Logo" class="w-16 mx-auto md:mx-0 rounded-xl shadow-md"><p class="text-sm text-stone-400 mt-2">Creating outdoor beauty since 2012</p></div>
             <div><h3 class="font-display text-xl mb-3">Quick Links</h3><ul class="space-y-1"><li><a href="index.html?section=home" class="hover:text-warm-400 text-stone-300 transition">Home</a></li><li><a href="index.html?section=services" class="hover:text-warm-400 text-stone-300 transition">Services</a></li><li><a href="index.html?section=contact" class="hover:text-warm-400 text-stone-300 transition">Contact</a></li></ul></div>
             <div><h3 class="font-display text-xl mb-3">Contact Info</h3><ul class="space-y-2 text-stone-300 text-sm"><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-map-marker-alt text-warm-400 w-5"></i><span>8248 Barnett Ave, Kansas City, KS 66112</span></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-phone-alt text-warm-400 w-5"></i><a href="tel:+19133057052" class="hover:text-warm-400 transition">+1 913-305-7052</a></li><li class="flex items-center justify-center md:justify-start gap-2"><i class="fas fa-envelope text-warm-400 w-5"></i><a href="mailto:green@pathviewlandscaping.com" class="hover:text-warm-400 transition">green@pathviewlandscaping.com</a></li></ul></div>
-            <div><h3 class="font-display text-xl mb-3">Follow Us</h3><div class="flex justify-center md:justify-start gap-4 text-2xl"><a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition"><i class="fab fa-instagram"></i></a></div></div>
+            <div><h3 class="font-display text-xl mb-3">Follow Us</h3><div class="flex justify-center md:justify-start gap-4 text-2xl"><a href="https://www.facebook.com/pathviewlandscaping" class="hover:text-warm-400 transition" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/pathviewlandscaping/" class="hover:text-warm-400 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
         </div>
         <hr class="border-stone-700 my-6">
         <p class="text-center text-stone-400 text-sm">© 2026 Pathview Landscaping. All Rights Reserved.</p>
@@ -258,7 +257,7 @@
     </footer>
 
     <script>
-        // Functional lightbox
+        // Lightbox funcional
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.close-lightbox');
